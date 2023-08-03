@@ -143,7 +143,7 @@ function LoginPage() {
             <Route path="/" element={<LoginForm />} />
             <Route path="/RegisterPage" element={<RegisterPage />} />
             <Route path="/ForgotPassword" element={<ForgotPassword />} />
-            
+            <Route path="/InvoiceForm" element={<InvoiceForm/>}/>
           </Routes>
         </Router>
       </div>

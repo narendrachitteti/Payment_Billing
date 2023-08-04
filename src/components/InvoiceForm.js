@@ -13,7 +13,19 @@ import { BiTrash } from 'react-icons/bi';
 import InputGroup from 'react-bootstrap/InputGroup';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import '../Invoice.css';
+const styles = {
+  
 
+
+  section2: {
+    display: 'flex',
+    justifyContent: 'center',
+
+  },
+  loginBox2: {
+    position: 'relative',
+  },}
 class InvoiceForm extends React.Component {
   constructor(props) {
     super(props);
@@ -148,7 +160,8 @@ handleCalculateTotal() {
   };
 
   render() {
-    return (
+    return (  <section style={styles.section2}>
+      <div className="login-box" style={styles.loginBox2}>
       <Form onSubmit={this.openModal}>
         <Row>
           <Col md={8} lg={9}>
@@ -268,7 +281,8 @@ handleCalculateTotal() {
             </div>
           </Col>
         </Row>
-      </Form>)
+      </Form>   </div>
+    </section>)
   }
 }   
     class InvoiceItem extends React.Component {

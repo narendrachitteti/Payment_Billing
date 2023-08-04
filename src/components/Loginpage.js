@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
-import RegisterPage from './RegisterPage';
+//import RegisterPage from './RegisterPage';
 import InvoiceForm from './InvoiceForm';
 import backgroundImage from './background.jpg';
 import logo from './logo.jpg'
@@ -15,7 +15,6 @@ const styles = {
     alignItems: 'center',
     width: '100%',
     height: '100vh',
-    backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -29,6 +28,16 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  section2: {
+    display: 'flex',
+    justifyContent: 'center',
+
+  },
+  loginBox2: {
+    position: 'relative',
+    backgroundSize:'auto',
+    
   },
   h2: {
     fontSize: '24px',
@@ -136,18 +145,17 @@ const styles = {
 
 function LoginPage() {
   return (
-    <section style={styles.section1}>
-      <div className="login-box" style={styles.loginBox1}>
-        <Router>
-          <Routes>
-            <Route path="/" element={<LoginForm />} />
-            <Route path="/RegisterPage" element={<RegisterPage />} />
-            <Route path="/ForgotPassword" element={<ForgotPassword />} />
-            <Route path="/InvoiceForm" element={<InvoiceForm/>}/>
-          </Routes>
-        </Router>
-      </div>
-    </section>
+    <Router>
+     <section style={styles.section2}>
+      <div className="login-box" style={styles.loginBox2}>
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          {/* <Route path="/RegisterPage" element={<RegisterPage />} /> */}
+          <Route path="/ForgotPassword" element={<ForgotPassword />} />
+          <Route path="/InvoiceForm" element={<InvoiceForm />} />
+        </Routes>
+      </div></section>
+    </Router>
   );
 }
 
@@ -198,8 +206,8 @@ const LoginForm = () => {
   };
 
   return (
-    <form action="" onSubmit={handleSubmit}>
-      <img src={logo} alt="Image" style={{width:'75px',marginLeft:'-40px'}}/>
+    <form action="" onSubmit={handleSubmit} style={{}}>
+      <img src={logo} alt="" style={{width:'75px',marginLeft:'-40px'}}/>
       <h2 style={styles.h2}>Login</h2>
       <div className="input-box" style={styles.inputBox}>
         <input
@@ -244,11 +252,11 @@ const LoginForm = () => {
       <button type="submit" disabled={submitting} data-aos="fade-up" style={styles.button}>
         {submitting ? 'Submitting...' : 'Login'}
       </button>
-      <div className="register-link" style={styles.registerLink}>
+      {/* <div className="register-link" style={styles.registerLink}>
         <p style={styles.registerLinkP}>
           Don't have an account? <Link to="/RegisterPage" style={styles.registerLinkA}>Register</Link>
         </p>
-      </div>
+      </div> */}
     </form>
   );
 };

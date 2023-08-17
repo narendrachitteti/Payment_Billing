@@ -84,6 +84,7 @@ handleCalculateTotal() {
   const items = this.state.items;
   let subTotal = 0;
 
+  
   items.forEach((item) => {
     subTotal += parseFloat((item.price * item.quantity).toFixed(2));
   });

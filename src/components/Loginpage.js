@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
-//import RegisterPage from './RegisterPage';
+import RegisterPage from './RegisterPage';
 import InvoiceForm from './InvoiceForm';
 import backgroundImage from './background.jpg';
 import logo from './logo.jpg'
@@ -150,7 +150,7 @@ function LoginPage() {
       <div className="login-box" style={styles.loginBox2}>
         <Routes>
           <Route path="/" element={<LoginForm />} />
-          {/* <Route path="/RegisterPage" element={<RegisterPage />} /> */}
+          <Route path="/RegisterPage" element={<RegisterPage />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/InvoiceForm" element={<InvoiceForm />} />
         </Routes>
@@ -252,11 +252,11 @@ const LoginForm = () => {
       <button type="submit" disabled={submitting} data-aos="fade-up" style={styles.button}>
         {submitting ? 'Submitting...' : 'Login'}
       </button>
-      {/* <div className="register-link" style={styles.registerLink}>
+      <div className="register-link" style={styles.registerLink}>
         <p style={styles.registerLinkP}>
           Don't have an account? <Link to="/RegisterPage" style={styles.registerLinkA}>Register</Link>
         </p>
-      </div> */}
+      </div>
     </form>
   );
 };
